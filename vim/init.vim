@@ -6,10 +6,15 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'kien/ctrlp.vim'
 " Check
 Plug 'w0rp/ale'
+Plug 'editorconfig/editorconfig-vim'
 
 " Rust
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
+
+" Vue
+Plug 'posva/vim-vue'
+Plug 'ap/vim-css-color'
 
 " APAREANCE:
 Plug 'itchyny/lightline.vim'
@@ -35,12 +40,16 @@ colorscheme PaperColor
 let g:ale_linters_explicit = 1
 let g:ale_linters = []
 let g:ale_linters = {
-	\ "rust": ["cargo"]
+	\ "rust": ["cargo"],
+	\ "vue": ["eslint"],
+	\ "javascript": ['eslint']
 	\}
 let g:ale_fixers = {}
 let g:ale_fixers = {
 	\ '*': ['remove_trailing_lines', 'trim_whitespace'],
-	\ "rust": ['rustfmt']
+	\ "rust": ['rustfmt'],
+	\ "vue": ['eslint'],
+	\ "javascript": ['eslint']
 	\}
 let g:ale_rust_rustc_options=''
 let g:ale_fix_on_text_changed = 0
