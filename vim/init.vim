@@ -15,6 +15,7 @@ Plug 'cespare/vim-toml'
 " Vue
 Plug 'posva/vim-vue'
 Plug 'ap/vim-css-color'
+Plug 'mattn/emmet-vim'
 
 " APAREANCE:
 Plug 'itchyny/lightline.vim'
@@ -30,6 +31,8 @@ set smartcase
 set nobackup
 set noswapfile
 set nowrap
+set tabstop=2
+set shiftwidth=2
 set encoding=utf-8
 set termguicolors
 hi CursorLine term=bold cterm=bold guibg=Grey10
@@ -63,3 +66,12 @@ let g:rustfmt_autosave = 1
 " CtrlP
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|target\|git'
+
+" Emmet
+let g:user_emmet_mode='a'    "enable all function in all mode.
+let g:user_emmet_install_global = 0
+autocmd FileType html,vue,css EmmetInstall
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+
+" XML
+au FileType html,vue set wrap
